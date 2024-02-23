@@ -10,6 +10,14 @@ for tc in range(1, t+1) :
             if arr[i][j] != '0' :
                 arr[i][j] = bin(int(arr[i][j], 16))
 
+            elif arr[i][j] == '0' :
+                if 0<=j-1<M and (arr[i][j-1] != '0' and arr[i][j-1] != '0b0') :
+                    arr[i][j] = bin(int(arr[i][j], 16))
+
+                elif 0<=j+1<M and (arr[i][j+1] != '0' and arr[i][j+1] != '0b0') :
+                    arr[i][j] = bin(int(arr[i][j], 16))
+
+
             # elif arr[i][j] == '0' and (0<=j-1<M and (arr[i][j-1] != '0')):
             #     arr[i][j] = bin(int(arr[i][j], 16))
             #
@@ -50,6 +58,11 @@ for tc in range(1, t+1) :
                     continue
                 else :
                     code_li.append(code)
+
+
+    # for k in range(len(code_li)) :
+    #     pasword = code_li[k]
+    #     ave = len(pasword) // 56
 
 
     print(code_li)
